@@ -4190,7 +4190,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 7688544441905233719, guid: 2ec307a21ca6c544eaaca9742108e46d, type: 3}
   baseEnemies: 8
-  enemiesPerSecond: 2
+  enemiesPerSecond: 1
   waveInterval: 1
   difficultyScalingFactor: 0.75
 --- !u!1001 &680013383
@@ -6393,6 +6393,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1769757242540653857, guid: f6cf21f9d96cc8a4eb9a45d2e55ef25e, type: 3}
   m_PrefabInstance: {fileID: 991691377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970411988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970411989}
+  m_Layer: 0
+  m_Name: FiringPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970411989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970411988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058654534}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &972261129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6974,11 +7005,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058654533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 728124285}
+  - {fileID: 970411989}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6994,11 +7026,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15aadbf0aafa24cbe61178c685dea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRotationPoint: {fileID: 0}
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  targettingRange: 2
+  projectilePrefab: {fileID: 5107654361657600931, guid: e332cd998ca287740b256177e52d20c9, type: 3}
+  firingPoint: {fileID: 970411989}
+  targettingRange: 3
+  pps: 1
 --- !u!1001 &1059530690
 PrefabInstance:
   m_ObjectHideFlags: 0
