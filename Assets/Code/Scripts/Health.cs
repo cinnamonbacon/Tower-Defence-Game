@@ -6,11 +6,12 @@ public class Health : MonoBehaviour {
 
     [Header("Attributes")]
     [SerializeField] private int hitPoints = 2;
-
+    
     public void TakeDamage(int dmg) {
         hitPoints -= dmg;
 
         if (hitPoints <= 0) {
+            GameObject.Find("/Canvas/Spores").GetComponent<Spores>().changeSpores(10);
             Spawner.onEnemyDestroy.Invoke();
             Destroy(gameObject);
         }

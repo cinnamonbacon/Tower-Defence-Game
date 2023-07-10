@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour {
     }
 
     private void EnemyDestroyed() {
-        enemiesAlive--;
+        this.enemiesAlive--;
     }
 
     private void SpawnEnemy() {
