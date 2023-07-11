@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class SporeSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject spore;
     private float cooldown ;
     private float count;
     Transform[] tileLoc;
     ArrayList locations;
+
+    // Start is called before the first frame update
     void Start()
     {
         cooldown = 5;
@@ -48,5 +49,10 @@ public class SporeSpawner : MonoBehaviour
             }
         }
         return num;
+    }
+
+    public void removeLoc(Transform t)
+    {
+        locations.Remove(t);
     }
 }
