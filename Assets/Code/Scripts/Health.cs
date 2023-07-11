@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
         hitPoints -= dmg;
 
         if (hitPoints <= 0) {
-            GameObject.Find("/Canvas/Spores").GetComponent<Spores>().changeSpores(10);
+            GameObject.Find("/Canvas/SporeCount").GetComponent<Spores>().changeSpores(10);
             Spawner.onEnemyDestroy.Invoke();
             Destroy(gameObject);
         }
