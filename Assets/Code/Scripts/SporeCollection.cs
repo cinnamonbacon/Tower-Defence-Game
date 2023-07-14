@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,19 +14,37 @@ public class SporeCollection : MonoBehaviour
     {
         collectiontTime = 5;
         timeToCollection = collectiontTime;
+        
+    }
+    void Update()
+    {
+        if (dist()<=1)
+        {
+            collect();
+        }
     }
 
-    // Update is called once per frame
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void collect()
     {
-        if (collectiontTime == 0)
+        if (collectiontTime <= 0)
         {
+            Debug.Log("test");
             GameObject.Find("/Canvas/SporeCount").GetComponent<Spores>().changeSpores(5);
             collectiontTime += timeToCollection;
         }
         else
         {
+            Debug.Log(collectiontTime);
             collectiontTime -= Time.deltaTime;
         }
     }
+
+    private double dist()
+    {
+        Vector3 shroomPos = GameObject.Find("/Shroomie").GetComponent<Transform>().position;
+        return Math.Pow(Math.Pow((shroomPos.x-transform.position.x),2)+Math.Pow((shroomPos.y - transform.position.y),2),(0.5f));
+    }
+
+    
 }

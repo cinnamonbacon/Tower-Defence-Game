@@ -24,7 +24,7 @@ public class Turret : MonoBehaviour {
     private float flipFactor = 30f;    // rate at which the flip occurs
 
     void Start() {
-        spriteScale = transform.localScale;
+        spriteScale = GameObject.Find("/Shroomie/Sprite").transform.localScale;
     }
 
     void Update() {
@@ -78,13 +78,13 @@ public class Turret : MonoBehaviour {
 
             Vector3 currentScale = spriteScale;
             currentScale.x *= Mathf.Clamp(flipCnt, -1f, 1f);
-            transform.localScale = currentScale;
+            GameObject.Find("/Shroomie/Sprite").transform.localScale = currentScale;
 
             if (flipCnt <= -1f) {
                 isFlipping = false;
                 flipCnt = 1f;
                 facingRight = !facingRight;
-                spriteScale = transform.localScale;
+                spriteScale = GameObject.Find("/Shroomie/Sprite").transform.localScale;
             }
         }
     }
